@@ -14,6 +14,8 @@
   justify-content: space-between;
   align-content: stretch;
   align-items: center;
+  box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.35);
+  background-color: #eeeeee;
 
   h1,
   h2,
@@ -33,6 +35,27 @@
   bottom: $footer-height;
   right: 0;
   left: 0;
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50vw;
+  }
+
+  .presentation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50vw;
+
+    .treeMap {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .footer {
@@ -41,9 +64,10 @@
   left: 0;
   right: 0;
   height: $footer-height;
-
   display: flex;
   justify-content: center;
   align-content: stretch;
   align-items: center;
+  box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.35);
+  background-color: #eeeeee;
 }
