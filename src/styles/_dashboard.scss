@@ -16,12 +16,7 @@
   align-items: center;
   box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.35);
   background-color: #eeeeee;
-
-  h1,
-  h2,
-  h3 {
-    margin-left: 25px;
-  }
+  padding: 5px 2rem;
 
   .histogram {
     height: 100%;

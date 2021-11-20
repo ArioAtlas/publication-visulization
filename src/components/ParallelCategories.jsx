@@ -35,6 +35,13 @@ function ParallelCategories() {
               },
             ],
             counts: [6, 10, 40, 23, 7],
+            line: {
+              color: [0, 0, 0, 1, 1],
+              colorscale: [
+                [0, 'lightsteelblue'],
+                [1, 'mediumseagreen'],
+              ],
+            },
           },
         ]}
         layout={{
