@@ -1,0 +1,44 @@
+.dashboard {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+
+  h1,
+  h2,
+  h3 {
+    margin-left: 25px;
+  }
+}
+
+.stage {
+  position: absolute;
+  top: $header-height;
+  bottom: $footer-height;
+  right: 0;
+  left: 0;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $footer-height;
+
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
