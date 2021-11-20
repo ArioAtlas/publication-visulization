@@ -1,3 +1,4 @@
+import ParallelCategories from './ParallelCategories';
 import TreeMap from './TreeMap';
 
 function Stage() {
@@ -6,7 +7,9 @@ function Stage() {
       <div className="presentation">
         <TreeMap />
       </div>
-      <div className="toolbar"></div>
+      <div className="toolbar">
+        <ParallelCategories />
+      </div>
     </div>
   );
 }
