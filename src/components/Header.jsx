@@ -1,49 +1,23 @@
 import Histogram from './Histogram';
 
-function Header() {
+function Header({ service, filter }) {
   return (
     <div className="header">
       <h1>Publication Explorer</h1>
       <Histogram
-        values={[
-          'omid',
-          'omid',
-          'omid',
-          'omid',
-          'omid',
-          'omid',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-        ]}
+        values={service.getColumn('year', true)}
+        width="250"
+        title="Year"
       />
       <Histogram
-        values={[
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-          'omid',
-          'omid',
-          'parna',
-          'parna',
-          'parna',
-          'parna',
-        ]}
+        values={service.getColumn('faculty')}
+        width="280"
+        title="Faculty"
       />
       <Histogram
-        values={['omid', 'omid', 'parna', 'parna', 'parna', 'parna']}
+        values={service.getColumn('department')}
+        width="475"
+        title="Department"
       />
     </div>
   );
