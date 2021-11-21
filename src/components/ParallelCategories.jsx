@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 
-function ParallelCategories() {
+function ParallelCategories({ dimensions }) {
   const parent = useRef(null);
   const [layout, setLayout] = useState({
     width: 0,
@@ -20,28 +20,9 @@ function ParallelCategories() {
         data={[
           {
             type: 'parcats',
-            dimensions: [
-              {
-                label: 'Hair',
-                values: ['Black', 'Brown', 'Brown', 'Brown', 'Red'],
-              },
-              {
-                label: 'Eye',
-                values: ['Brown', 'Brown', 'Brown', 'Blue', 'Blue'],
-              },
-              {
-                label: 'Sex',
-                values: ['Female', 'Male', 'Female', 'Male', 'Male'],
-              },
-            ],
-            counts: [6, 10, 40, 23, 7],
-            line: {
-              color: [0, 0, 0, 1, 1],
-              colorscale: [
-                [0, 'lightsteelblue'],
-                [1, 'mediumseagreen'],
-              ],
-            },
+            dimensions,
+            // line: {color: [color],
+            //   colorscale: [[0, 'lightsteelblue'], [1, 'mediumseagreen']]},
           },
         ]}
         layout={{

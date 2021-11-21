@@ -2,14 +2,16 @@ import ParallelCategories from './ParallelCategories';
 import Sunburst from './Sunburst';
 import TreeMap from './TreeMap';
 
-function Stage() {
+function Stage({ service, filter }) {
+  const dimensions = service.getDimensions(['year', 'department', 'faculty']);
+
   return (
     <div className="stage">
       <div className="presentation">
         <TreeMap />
       </div>
       <div className="toolbar">
-        <ParallelCategories />
+        <ParallelCategories dimensions={dimensions} />
         <Sunburst />
       </div>
     </div>
