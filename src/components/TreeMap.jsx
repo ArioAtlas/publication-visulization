@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 
-function TreeMap() {
+function TreeMap({ data }) {
   const parent = useRef(null);
   const [layout, setLayout] = useState({
     width: 0,
@@ -21,28 +21,28 @@ function TreeMap() {
         data={[
           {
             type: 'treemap',
-            labels: [
-              'Eve',
-              'Cain',
-              'Seth',
-              'Enos',
-              'Noam',
-              'Abel',
-              'Awan',
-              'Enoch',
-              'Azura',
-            ],
-            parents: [
-              '',
-              'Eve',
-              'Eve',
-              'Seth',
-              'Seth',
-              'Eve',
-              'Eve',
-              'Awan',
-              'Eve',
-            ],
+            ...data,
+            textinfo: 'label+value+percent  entry',
+            branchvalues: 'total',
+            marker: {
+              line: {
+                width: 1,
+                color: 'black',
+              },
+              colors: [
+                '#8dd3c7',
+                '#ffed6f',
+                '#b3de69',
+                '#bebada',
+                '#fb8072',
+                '#80b1d3',
+                '#fccde5',
+                '#d9d9d9',
+                '#ccebc5',
+                '#fdb462',
+                '#ffffb3',
+              ],
+            },
           },
         ]}
         layout={{

@@ -14,6 +14,7 @@ function ParallelCategories({ dimensions }) {
       height: parent?.current?.clientHeight ?? 0,
     });
   }, [parent]);
+
   return (
     <div className="parallelCategories" ref={parent}>
       <Plot
@@ -21,8 +22,16 @@ function ParallelCategories({ dimensions }) {
           {
             type: 'parcats',
             dimensions,
-            // line: {color: [color],
-            //   colorscale: [[0, 'lightsteelblue'], [1, 'mediumseagreen']]},
+            line: {
+              color: dimensions[0].values.map(
+                (v) => parseInt(v.replace('&nbsp;', '')) % 2019
+              ),
+
+              colorscale: [
+                [0, 'darkgray'],
+                [1, 'mediumseagreen'],
+              ],
+            },
           },
         ]}
         layout={{

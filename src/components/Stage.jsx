@@ -1,18 +1,25 @@
 import ParallelCategories from './ParallelCategories';
-import Sunburst from './Sunburst';
 import TreeMap from './TreeMap';
 
 function Stage({ service, filter }) {
-  const dimensions = service.getDimensions(['year', 'department', 'faculty']);
+  const dimensions = service.getDimensions(
+    ['year', 'department', 'faculty'],
+    true
+  );
+  const grouped = service.getGroupedBy([
+    'faculty',
+    'department',
+    'year',
+    'name',
+  ]);
 
   return (
     <div className="stage">
       <div className="presentation">
-        <TreeMap />
+        <TreeMap data={grouped} />
       </div>
       <div className="toolbar">
         <ParallelCategories dimensions={dimensions} />
-        <Sunburst />
       </div>
     </div>
   );
